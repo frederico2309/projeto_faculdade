@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Compras - Escola Talentinho</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app" class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-title">
+                    <i class="fas fa-shopping-cart"></i>
+                    <div>
+                        <h1>Sistema de Compras</h1>
+                        <p class="subtitle">Escola Talentinho</p>
+                    </div>
+                </div>
+                <div class="header-buttons">
+                    <button id="btnFormulario" class="btn btn-primary active">
+                        <i class="fas fa-plus"></i> Novo Pedido
+                    </button>
+                    <button id="btnHistorico" class="btn btn-secondary">
+                        <i class="fas fa-eye"></i> Ver Pedidos
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Tela: Formulário -->
+        <div id="telaFormulario" class="tela active">
+            <!-- Dados do Solicitante -->
+            <section class="card">
+                <h2 class="section-title">
+                    <i class="fas fa-user"></i> Dados do Solicitante
+                </h2>
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar"></i> Data</label>
+                        <input type="date" id="inputData" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Nome *</label>
+                        <input type="text" id="inputNome" placeholder="Digite seu nome" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-building"></i> Setor *</label>
+                        <select id="inputSetor" class="form-control">
+                            <option value="">Selecione</option>
+                            <option value="Cozinha">Cozinha</option>
+                            <option value="Copa">Copa</option>
+                            <option value="Dispensa">Dispensa</option>
+                            <option value="Limpeza">Limpeza</option>
+                            <option value="Administração">Administração</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Limpeza e Descartáveis -->
+            <section class="card">
+                <div class="section-header">
+                    <h3>🧹 LIMPEZA E DESCARTÁVEIS</h3>
+                </div>
+                <div class="form-grid-3" id="gridLimpeza"></div>
+            </section>
+
+            <!-- Alimentos Diversos -->
+            <section class="card">
+                <div class="section-header">
+                    <h3>🍽️ ALIMENTOS DIVERSOS</h3>
+                </div>
+                <div class="form-grid-3" id="gridAlimentos"></div>
+            </section>
+
+            <!-- Observações -->
+            <section class="card">
+                <div class="section-header">
+                    <h3>📝 Observações</h3>
+                </div>
+                <textarea id="inputObservacoes" rows="3" placeholder="Ex. Item urgente, substituição necessária, etc." class="form-control"></textarea>
+            </section>
+
+            <!-- Botão Enviar -->
+            <button id="btnEnviar" class="btn btn-submit">
+                <i class="fas fa-paper-plane"></i> Enviar Pedido
+            </button>
+        </div>
+
+        <!-- Tela: Histórico -->
+        <div id="telaHistorico" class="tela">
+            <section class="card">
+                <h2 class="section-title">Histórico de Pedidos</h2>
+                <div id="listaPedidos"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
